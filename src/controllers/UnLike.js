@@ -12,11 +12,7 @@ module.exports = {
 			return res.status(400).json({ error: 'Dev not exist' })
 		}
 
-		if (targetDev.likes.includes(loggedDev._id)) {
-			console.log('ITS MATCH')
-		}
-
-		loggedDev.likes.push(targetDev._id)
+		loggedDev.unlikes.push(targetDev._id)
 
 		await loggedDev.save()
 
