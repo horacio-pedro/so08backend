@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const routes = require('./routes')
 
@@ -10,6 +11,7 @@ mongoose.connect('mongodb+srv://omnistack08:omnistack08@cluster0-wwofx.mongodb.n
 	useUnifiedTopology: true 
 })
 
+server.use(cors())
 server.use(express.json())
 server.use(routes)
 
